@@ -20,3 +20,14 @@ C:\Users\Andy.Kauffman\Documents\Visual Studio 2010\Projects\Gradebook\WinGradeb
 C:\Users\Andy.Kauffman\Documents\Visual Studio 2010\Projects\Gradebook\WinGradebook\bin\Debug\Gradebook.pdb
 C:\Users\Andy.Kauffman\Documents\Visual Studio 2010\Projects\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.exe
 C:\Users\Andy.Kauffman\Documents\Visual Studio 2010\Projects\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.pdb
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.exe
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.pdb
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\bin\Debug\Gradebook.exe
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\bin\Debug\Gradebook.pdb
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.MainForm.resources
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.Properties.Resources.resources
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.View.AssignmentGrid.resources
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.View.AssignmentTabControl.resources
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.View.GradeGrid.resources
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.View.GradeTabControl.resources
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.csproj.GenerateResource.Cache
