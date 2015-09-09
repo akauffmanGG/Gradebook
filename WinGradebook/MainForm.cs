@@ -31,7 +31,7 @@ namespace Gradebook
             tbGrades.Controls.Add(new GradeTabControl());
             tbAssignments.Controls.Add(new AssignmentTabControl());
 
-            applyTheme();
+            //applyTheme();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

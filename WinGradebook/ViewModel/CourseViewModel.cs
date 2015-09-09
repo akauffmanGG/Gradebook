@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Gradebook.Model;
 using System.ComponentModel;
+using Gradebook.Core;
 
 namespace Gradebook.ViewModel
 {
@@ -11,11 +12,11 @@ namespace Gradebook.ViewModel
     {
         public Guid Id { get; set; }
         public String Name { get; set; }
-        public BindingList<AssignmentViewModel> Assignments { get; set; }
+        public SortableBindingList<AssignmentViewModel> Assignments { get; set; }
 
         public CourseViewModel()
         {
-            Assignments = new BindingList<AssignmentViewModel>();
+            Assignments = new SortableBindingList<AssignmentViewModel>();
         }
 
         public CourseViewModel(Course course)
@@ -23,7 +24,7 @@ namespace Gradebook.ViewModel
             this.Id = course.Id;
             this.Name = course.Name;
 
-            Assignments = new BindingList<AssignmentViewModel>();
+            Assignments = new SortableBindingList<AssignmentViewModel>();
             foreach(Assignment assignment in course.Assignments)
             {
                 Assignments.Add(new AssignmentViewModel(assignment));

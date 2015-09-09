@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgStudents = new System.Windows.Forms.DataGridView();
+            this.dgStudents = new Gradebook.View.StyledGrid();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tbGrades = new System.Windows.Forms.TabPage();
             this.tbAssignments = new System.Windows.Forms.TabPage();
             this.tbStudents = new System.Windows.Forms.TabPage();
             this.tbCourses = new System.Windows.Forms.TabPage();
-            this.dgCourses = new System.Windows.Forms.DataGridView();
+            this.dgCourses = new Gradebook.View.StyledGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -210,7 +210,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgStudents;
+        private Gradebook.View.StyledGrid dgStudents;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentBindingSource;
@@ -221,7 +221,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TabPage tbGrades;
         private System.Windows.Forms.TabPage tbCourses;
-        private System.Windows.Forms.DataGridView dgCourses;
+        private Gradebook.View.StyledGrid dgCourses;
         private System.Windows.Forms.BindingSource courseViewModelBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 

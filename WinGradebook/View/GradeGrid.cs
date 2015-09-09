@@ -10,7 +10,7 @@ using Gradebook.ViewModel;
 
 namespace Gradebook.View
 {
-    public partial class GradeGrid : DataGridView
+    public partial class GradeGrid : StyledGrid
     {
         [Description("The course of which grades will be displayed."), Category("Data"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
         public CourseViewModel Course { get; set; }
@@ -84,7 +84,9 @@ namespace Gradebook.View
                         e.Value = assignment.Grades[student.Id].Points;
                     } else {
                         this.Columns[e.ColumnIndex].DefaultCellStyle.Format = "P";
-                        e.Value = assignment.CalculateGradePercentage(student);
+                        double gradePercentage = assignment.CalculateGradePercentage(student);
+                        e.Value = gradePercentage;
+                        e.CellStyle.BackColor = getColorForGrade(gradePercentage);
                     }
                 }
             }
@@ -173,6 +175,24 @@ namespace Gradebook.View
 
                 }
 
+            }
+        }
+
+        private void GradeGrid_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            DataGridViewColumn col = e.Column;
+        }
+
+        private Color getColorForGrade(double gradePercentage)
+        {
+            if (gradePercentage <= .50)
+            {
+                return Color.Red;
+            } else if (gradePercentage <= .75) {
+
+                return Color.Yellow;
+            } else {
+                return Color.Purple;
             }
         }
     }

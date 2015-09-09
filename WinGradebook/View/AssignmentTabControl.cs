@@ -45,8 +45,7 @@ namespace Gradebook.View
 
             DataGridView dgAssignments = new AssignmentGrid();
             dgAssignments.Dock = DockStyle.Fill;
-            BindingList<AssignmentViewModel> blAssignments = new BindingList<AssignmentViewModel>(course.Assignments);
-            dgAssignments.DataSource = blAssignments;
+            dgAssignments.DataSource = course.Assignments;
 
             tab.Controls.Add(dgAssignments);
             tab.DataBindings.Add(new Binding("Text", course, "Name"));

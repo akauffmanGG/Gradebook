@@ -41,6 +41,7 @@
             this.studentNameColumn.DataPropertyName = "FormattedName";
             this.studentNameColumn.HeaderText = "Student";
             this.studentNameColumn.Name = "studentNameColumn";
+            this.studentNameColumn.ReadOnly = true;
             // 
             // totalGradeColumn
             // 
@@ -48,6 +49,8 @@
             this.totalGradeColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.totalGradeColumn.HeaderText = "Total Grade";
             this.totalGradeColumn.Name = "totalGradeColumn";
+            this.totalGradeColumn.ReadOnly = true;
+            this.totalGradeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // GradeGrid
             // 
@@ -62,6 +65,7 @@
             this.totalGradeColumn});
             this.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GradeGrid_CellFormatting);
             this.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GradeGrid_CellValidating);
+            this.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.GradeGrid_SortCompare);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

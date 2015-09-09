@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\SortableBindingList.cs" />
     <Compile Include="Data\CourseDao.cs" />
     <Compile Include="Data\StudentDao.cs" />
     <Compile Include="MainForm.cs">
@@ -89,6 +90,13 @@
     <Compile Include="View\GradeTabControl.Designer.cs">
       <DependentUpon>GradeTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\StyledGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\StyledGrid.Designer.cs">
+      <DependentUpon>StyledGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Theme\ThemeColors.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

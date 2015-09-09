@@ -31,3 +31,4 @@ C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gra
 C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.View.GradeGrid.resources
 C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.View.GradeTabControl.resources
 C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.csproj.GenerateResource.Cache
+C:\Users\Andy.Kauffman\Documents\GitHub\Gradebook\WinGradebook\obj\x86\Debug\Gradebook.csprojResolveAssemblyReference.cache

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Gradebook.View
 {
-    public partial class AssignmentGrid : DataGridView
+    public partial class AssignmentGrid : StyledGrid
     {
         public AssignmentGrid()
         {

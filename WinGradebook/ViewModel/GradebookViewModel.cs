@@ -5,13 +5,14 @@ using System.Text;
 using Gradebook.Model;
 using Gradebook.Data;
 using System.ComponentModel;
+using Gradebook.Core;
 
 namespace Gradebook.ViewModel
 {
     class GradebookViewModel
     {
-        public BindingList<StudentViewModel> Students { get; set; }
-        public BindingList<CourseViewModel> Courses { get; set; }
+        public SortableBindingList<StudentViewModel> Students { get; set; }
+        public SortableBindingList<CourseViewModel> Courses { get; set; }
         
         private static GradebookViewModel instance;
         public static GradebookViewModel Instance
@@ -29,7 +30,7 @@ namespace Gradebook.ViewModel
 
         private GradebookViewModel(){
             List<Student> _students = StudentDao.getStudents();
-            Students = new BindingList<StudentViewModel>();
+            Students = new SortableBindingList<StudentViewModel>();
             foreach (Student student in _students)
             {
                 Students.Add(new StudentViewModel(student));
@@ -37,7 +38,7 @@ namespace Gradebook.ViewModel
             
             
             List<Course> _courses = CourseDao.getCourses();
-            Courses = new BindingList<CourseViewModel>();
+            Courses = new SortableBindingList<CourseViewModel>();
             foreach (Course course in _courses)
             {
                 Courses.Add(new CourseViewModel(course));
