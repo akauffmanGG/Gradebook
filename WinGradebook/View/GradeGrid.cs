@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Gradebook.ViewModel;
+using Gradebook.View.Theme;
 
 namespace Gradebook.View
 {
@@ -86,14 +87,16 @@ namespace Gradebook.View
                         this.Columns[e.ColumnIndex].DefaultCellStyle.Format = "P";
                         double gradePercentage = assignment.CalculateGradePercentage(student);
                         e.Value = gradePercentage;
-                        e.CellStyle.BackColor = getColorForGrade(gradePercentage);
+                        e.CellStyle.BackColor = GradeColorCode.getColor(gradePercentage);
                     }
                 }
             }
             else if (this.Columns["totalGradeColumn"].Index == e.ColumnIndex)
             {
                 StudentViewModel student = (StudentViewModel)this.Rows[e.RowIndex].DataBoundItem;
-                e.Value = Course.CalculateGradePercentage(student);
+                double gradePercentage = Course.CalculateGradePercentage(student);
+                e.Value = gradePercentage;
+                e.CellStyle.BackColor = GradeColorCode.getColor(gradePercentage);
             }
         }
 
@@ -183,17 +186,5 @@ namespace Gradebook.View
             DataGridViewColumn col = e.Column;
         }
 
-        private Color getColorForGrade(double gradePercentage)
-        {
-            if (gradePercentage <= .50)
-            {
-                return Color.Red;
-            } else if (gradePercentage <= .75) {
-
-                return Color.Yellow;
-            } else {
-                return Color.Purple;
-            }
-        }
     }
 }

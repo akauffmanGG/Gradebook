@@ -64,6 +64,7 @@
     <Compile Include="ViewModel\AssignmentViewModel.cs" />
     <Compile Include="ViewModel\CourseViewModel.cs" />
     <Compile Include="ViewModel\GradebookViewModel.cs" />
+    <Compile Include="ViewModel\GradeColorCode.cs" />
     <Compile Include="ViewModel\GradeViewModel.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
     <Compile Include="View\AssignmentGrid.cs">

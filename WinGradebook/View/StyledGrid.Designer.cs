@@ -8,11 +8,6 @@ namespace Gradebook.View
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private Color darkPurpleColor = Color.FromArgb(103, 16, 150);
-        private Color lightPurpleColor = Color.FromArgb(230, 178, 255);
-        private Color purpleColor = Color.FromArgb(178, 137, 196);
-        private Color mintColor = Color.FromArgb(210, 239, 221);
-        private Color yellowColor = Color.FromArgb(255, 253, 190);
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -46,14 +41,13 @@ namespace Gradebook.View
             this.RowHeadersDefaultCellStyle.BackColor = ThemeColors.HEADER_BACK_COLOR;
 
             // Cell Styles //
-            this.DefaultCellStyle.BackColor = lightPurpleColor;
-            this.DefaultCellStyle.SelectionBackColor = yellowColor;
+            this.DefaultCellStyle.BackColor = ThemeColors.CELL_BACK_COLOR;
+            this.DefaultCellStyle.SelectionBackColor = ThemeColors.SELECTION_BACK_COLOR;
             this.DefaultCellStyle.SelectionForeColor = ThemeColors.FORE_COLOR;
-            //this.DefaultCellStyle.Font = new Font(this.DefaultCellStyle.Font, FontStyle.Bold);
             this.DefaultCellStyle.Font = new Font("Calibri", 9.5f, FontStyle.Bold);
             this.ForeColor = ThemeColors.FORE_COLOR;
-            
-            this.BackgroundColor = mintColor;
+
+            this.BackgroundColor = ThemeColors.BACKGROUND_COLOR;
             
         }
 

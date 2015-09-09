@@ -6,3 +6,5 @@ WinGradebook/obj/x86/Debug/Gradebook.exe
 *.exe
 WinGradebook/obj/x86/Debug/Gradebook.pdb
 *.Cache
+*.exe
+*.pdb

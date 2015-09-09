@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using Gradebook.View.Theme;
 
 namespace Gradebook.View
 {
@@ -22,7 +23,7 @@ namespace Gradebook.View
         {
             base.PaintBackground(graphics, clipBounds, gridBounds);
 
-            LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, Color.White, this.mintColor, LinearGradientMode.Vertical);
+            LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, Color.White, ThemeColors.BACKGROUND_COLOR, LinearGradientMode.Vertical);
 
             graphics.FillRectangle(brush, clipBounds);
         }
