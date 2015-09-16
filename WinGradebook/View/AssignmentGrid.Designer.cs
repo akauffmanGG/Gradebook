@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Gradebook.View.Calendar;
 namespace Gradebook.View
 {
     partial class AssignmentGrid
@@ -9,8 +10,8 @@ namespace Gradebook.View
         private System.ComponentModel.IContainer components = null;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn assignmentDateColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateColumn;
+        private CalendarColumn assignmentDateColumn;
+        private CalendarColumn dueDateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pointsColumn;
 
         /// <summary> 
@@ -37,8 +38,8 @@ namespace Gradebook.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignmentDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assignmentDateColumn = new CalendarColumn();
+            this.dueDateColumn = new CalendarColumn();
             this.pointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
