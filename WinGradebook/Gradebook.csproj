@@ -79,6 +79,11 @@
     <Compile Include="View\AssignmentTabControl.Designer.cs">
       <DependentUpon>AssignmentTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Calendar\CalendarCell.cs" />
+    <Compile Include="View\Calendar\CalendarColumn.cs" />
+    <Compile Include="View\Calendar\CalendarEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\GradeGrid.cs">
       <SubType>Component</SubType>
     </Compile>
