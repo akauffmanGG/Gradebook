@@ -24,7 +24,6 @@ namespace Gradebook
         private void MainForm_Load(object sender, EventArgs e)
         {
             gradebookVM = GradebookViewModel.Instance;
-            dgStudents.DataSource = gradebookVM.Students;
 
             dgCourses.DataSource = gradebookVM.Courses;
 

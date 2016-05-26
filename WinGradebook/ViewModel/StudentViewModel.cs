@@ -11,6 +11,7 @@ namespace Gradebook.ViewModel
         public Guid Id { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        public string ClassPeriod { get; set; }
         public string FormattedName
         {
             get
@@ -27,6 +28,7 @@ namespace Gradebook.ViewModel
             this.Id = student.Id;
             this.LastName = student.LastName;
             this.FirstName = student.FirstName;
+            this.ClassPeriod = student.ClassPeriod;
         }
 
     }

@@ -1,4 +1,5 @@
-﻿namespace Gradebook
+﻿using Gradebook.View;
+namespace Gradebook
 {
     partial class MainForm
     {
@@ -29,7 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgStudents = new Gradebook.View.StyledGrid();
+            this.dgStudents = new StudentGrid();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tbGrades = new System.Windows.Forms.TabPage();
             this.tbAssignments = new System.Windows.Forms.TabPage();
@@ -40,6 +41,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classPeriodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,23 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseViewModelBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgStudents
-            // 
-            this.dgStudents.AllowUserToOrderColumns = true;
-            this.dgStudents.AutoGenerateColumns = false;
-            this.dgStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.lastNameDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn});
-            this.dgStudents.DataSource = this.studentBindingSource;
-            this.dgStudents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgStudents.Location = new System.Drawing.Point(3, 3);
-            this.dgStudents.Name = "dgStudents";
-            this.dgStudents.Size = new System.Drawing.Size(670, 389);
-            this.dgStudents.TabIndex = 0;
-            this.dgStudents.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgStudents_UserDeletingRow);
             // 
             // tabControl
             // 
@@ -158,20 +143,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 82;
-            // 
             // studentBindingSource
             // 
             this.studentBindingSource.DataSource = typeof(Gradebook.Model.Student);
@@ -210,9 +181,10 @@
 
         #endregion
 
-        private Gradebook.View.StyledGrid dgStudents;
+        private StudentGrid dgStudents;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classPeriodDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tbStudents;

@@ -147,7 +147,9 @@ namespace Gradebook.View
 
         private Boolean isAssignmentColumn(int columnIndex)
         {
-            return this.Columns["studentNameColumn"].Index != columnIndex && this.Columns["totalGradeColumn"].Index != columnIndex;
+            return this.Columns["studentNameColumn"].Index != columnIndex
+                && this.Columns["classPeriodColumn"].Index != columnIndex
+                && this.Columns["totalGradeColumn"].Index != columnIndex;
         }
 
         private void GradeGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)

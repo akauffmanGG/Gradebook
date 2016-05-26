@@ -7,6 +7,7 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classPeriodColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalGradeColumn;
 
         /// <summary> 
@@ -32,6 +33,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.studentNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classPeriodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalGradeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +44,13 @@
             this.studentNameColumn.HeaderText = "Student";
             this.studentNameColumn.Name = "studentNameColumn";
             this.studentNameColumn.ReadOnly = true;
+            // 
+            // classPeriodColumn
+            // 
+            this.classPeriodColumn.DataPropertyName = "ClassPeriod";
+            this.classPeriodColumn.HeaderText = "Class";
+            this.classPeriodColumn.Name = "classPeriodColumn";
+            this.classPeriodColumn.ReadOnly = true;
             // 
             // totalGradeColumn
             // 
@@ -62,6 +71,7 @@
             this.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.studentNameColumn,
+            this.classPeriodColumn,
             this.totalGradeColumn});
             this.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GradeGrid_CellFormatting);
             this.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GradeGrid_CellValidating);

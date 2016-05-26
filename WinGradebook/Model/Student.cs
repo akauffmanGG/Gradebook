@@ -11,6 +11,7 @@ namespace Gradebook.Model
         public Guid Id { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
+        public string ClassPeriod { get; set; }
 
         public Student()
         {
@@ -22,6 +23,7 @@ namespace Gradebook.Model
             this.Id = studentVM.Id;
             this.LastName = studentVM.LastName;
             this.FirstName = studentVM.FirstName;
+            this.ClassPeriod = studentVM.ClassPeriod;
         }
 
     }

@@ -9,3 +9,4 @@ WinGradebook/obj/x86/Debug/Gradebook.pdb
 *.exe
 *.pdb
 *.pdb
+*.cache

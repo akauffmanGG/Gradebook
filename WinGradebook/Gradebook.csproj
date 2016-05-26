@@ -96,6 +96,12 @@
     <Compile Include="View\GradeTabControl.Designer.cs">
       <DependentUpon>GradeTabControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\StudentGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\StudentGrid.Designer.cs">
+      <DependentUpon>StudentGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StyledGrid.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GradeTabControl.resx">
       <DependentUpon>GradeTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StudentGrid.resx">
+      <DependentUpon>StudentGrid.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Gradebook.Model.Student.datasource" />
     <None Include="Properties\DataSources\Gradebook.ViewModel.CourseViewModel.datasource" />
