@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Core\SortableBindingList.cs" />
     <Compile Include="Data\CourseDao.cs" />
+    <Compile Include="Data\SchoolYearDao.cs" />
     <Compile Include="Data\StudentDao.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -58,6 +59,8 @@
     <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Grade.cs" />
+    <Compile Include="Model\GradingPeriod.cs" />
+    <Compile Include="Model\SchoolYear.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +69,8 @@
     <Compile Include="ViewModel\GradebookViewModel.cs" />
     <Compile Include="ViewModel\GradeColorCode.cs" />
     <Compile Include="ViewModel\GradeViewModel.cs" />
+    <Compile Include="ViewModel\GradingPeriodViewModel.cs" />
+    <Compile Include="ViewModel\SchoolYearViewModel.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
     <Compile Include="View\AssignmentGrid.cs">
       <SubType>Component</SubType>

@@ -10,3 +10,7 @@ WinGradebook/obj/x86/Debug/Gradebook.pdb
 *.pdb
 *.pdb
 *.cache
+*.csproj
+*.suo
+WinGradebook/bin/Debug/Gradebook.exe
+*.pdb
