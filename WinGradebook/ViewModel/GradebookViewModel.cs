@@ -11,6 +11,7 @@ namespace Gradebook.ViewModel
 {
     class GradebookViewModel
     {
+        public SchoolYearViewModel CurrentSchoolYear { get; private set; }
         public SortableBindingList<StudentViewModel> Students { get; set; }
         public SortableBindingList<CourseViewModel> Courses { get; set; }
         
@@ -29,38 +30,27 @@ namespace Gradebook.ViewModel
         }
 
         private GradebookViewModel(){
-            List<Student> _students = StudentDao.getStudents();
-            Students = new SortableBindingList<StudentViewModel>();
-            foreach (Student student in _students)
+            SchoolYear _schoolYear = SchoolYearDao.getCurrentSchoolYear();
+            if (_schoolYear == null)
             {
-                Students.Add(new StudentViewModel(student));
+                _schoolYear = new SchoolYear();
             }
-            
-            
-            List<Course> _courses = CourseDao.getCourses();
-            Courses = new SortableBindingList<CourseViewModel>();
-            foreach (Course course in _courses)
+
+            CurrentSchoolYear = new SchoolYearViewModel(_schoolYear);
+
+            GradingPeriodViewModel _currentGradingPeriod = CurrentSchoolYear.CurrentGradingPeriod;
+            if (CurrentSchoolYear.CurrentGradingPeriod == null)
             {
-                Courses.Add(new CourseViewModel(course));
+                CurrentSchoolYear.CreateGradingPeriod();
             }
+            Students = CurrentSchoolYear.CurrentGradingPeriod.Students;
+            Courses = CurrentSchoolYear.CurrentGradingPeriod.Courses;
         }
 
         public void Save()
         {
-            List<Student> _students = new List<Student>(Students.Count);
-            foreach (StudentViewModel studentVM in Students)
-            {
-                _students.Add(new Student(studentVM));
-            }
-
-            List<Course> _courses = new List<Course>(Courses.Count);
-            foreach (CourseViewModel courseVM in Courses)
-            {
-                _courses.Add(new Course(courseVM));
-            }
-
-            StudentDao.saveStudents(_students);
-            CourseDao.saveCourses(_courses);
+            SchoolYear schoolYear = new SchoolYear(CurrentSchoolYear);
+            SchoolYearDao.SaveSchoolYear(schoolYear);
         }
 
     }

@@ -25,9 +25,13 @@ namespace Gradebook.ViewModel
             this.Name = course.Name;
 
             Assignments = new SortableBindingList<AssignmentViewModel>();
-            foreach(Assignment assignment in course.Assignments)
+
+            if (course.Assignments != null)
             {
-                Assignments.Add(new AssignmentViewModel(assignment));
+                foreach (Assignment assignment in course.Assignments)
+                {
+                    Assignments.Add(new AssignmentViewModel(assignment));
+                }
             }
         }
 
