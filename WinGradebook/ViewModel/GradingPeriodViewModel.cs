@@ -13,7 +13,7 @@ namespace Gradebook.ViewModel
         public String Name { get; set; }
         public SortableBindingList<StudentViewModel> Students { get; set; }
         public SortableBindingList<CourseViewModel> Courses { get; set; }
-        public bool isCurrent { get; private set; }
+        public bool isCurrent { get; set; }
 
         public GradingPeriodViewModel()
         {

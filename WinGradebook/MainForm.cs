@@ -33,6 +33,23 @@ namespace Gradebook
             //applyTheme();
         }
 
+        private void initializeComponent()
+        {
+            dgCourses.DataSource = gradebookVM.Courses;
+            dgStudents.DataSource = gradebookVM.Students;
+
+            tbGrades.Controls.Add(new GradeTabControl());
+            tbAssignments.Controls.Add(new AssignmentTabControl());
+        }
+
+        private void reinitializeComponent()
+        {
+            tbGrades.Controls.Clear();
+            tbAssignments.Controls.Clear();
+
+            initializeComponent();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             gradebookVM.Save();
@@ -85,6 +102,26 @@ namespace Gradebook
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void gradingPeriodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GradingPeriodPrompt gradingPeriodPrompt = new GradingPeriodPrompt();
+            DialogResult dr = gradingPeriodPrompt.ShowDialog(this);
+
+            if (dr == DialogResult.Cancel)
+            {
+                gradingPeriodPrompt.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                gradebookVM.CurrentSchoolYear.CurrentGradingPeriod.Name = gradingPeriodPrompt.getName();
+                gradebookVM.CurrentSchoolYear.CreateGradingPeriodFromCurrent();
+                gradingPeriodPrompt.Close();
+
+                reinitializeComponent();
+            }
+            
         }
 
     }

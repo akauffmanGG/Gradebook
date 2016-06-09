@@ -6,7 +6,7 @@ using Gradebook.Model;
 
 namespace Gradebook.ViewModel
 {
-    public class StudentViewModel
+    public class StudentViewModel : ICloneable
     {
         public Guid Id { get; set; }
         public string LastName { get; set; }
@@ -31,5 +31,10 @@ namespace Gradebook.ViewModel
             this.ClassPeriod = student.ClassPeriod;
         }
 
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }
