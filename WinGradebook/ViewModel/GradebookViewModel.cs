@@ -12,8 +12,20 @@ namespace Gradebook.ViewModel
     class GradebookViewModel
     {
         public SchoolYearViewModel CurrentSchoolYear { get; private set; }
-        public SortableBindingList<StudentViewModel> Students { get; set; }
-        public SortableBindingList<CourseViewModel> Courses { get; set; }
+        public SortableBindingList<StudentViewModel> Students {
+            get
+            {
+                return CurrentSchoolYear.CurrentGradingPeriod.Students;
+            }
+        }
+
+        public SortableBindingList<CourseViewModel> Courses
+        {
+            get
+            {
+                return CurrentSchoolYear.CurrentGradingPeriod.Courses;
+            }
+        }
         
         private static GradebookViewModel instance;
         public static GradebookViewModel Instance
@@ -43,8 +55,6 @@ namespace Gradebook.ViewModel
             {
                 CurrentSchoolYear.CreateGradingPeriod();
             }
-            Students = CurrentSchoolYear.CurrentGradingPeriod.Students;
-            Courses = CurrentSchoolYear.CurrentGradingPeriod.Courses;
         }
 
         public void Save()

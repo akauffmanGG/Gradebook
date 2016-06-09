@@ -8,7 +8,7 @@ using Gradebook.Core;
 
 namespace Gradebook.ViewModel
 {
-    public class CourseViewModel
+    public class CourseViewModel : ICloneable
     {
         public Guid Id { get; set; }
         public String Name { get; set; }
@@ -55,6 +55,18 @@ namespace Gradebook.ViewModel
             {
                 return Convert.ToDouble(studentPoints) / Convert.ToDouble(totalPoints);
             }
+        }
+
+        /** 
+         * Returns a shallow clone of this instance. The clone will have a new 
+         * Id and no assignments.
+         **/
+        public object Clone()
+        {
+            CourseViewModel clone = new CourseViewModel();
+            clone.Name = this.Name;
+
+            return clone;
         }
 
     }

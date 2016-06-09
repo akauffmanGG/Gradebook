@@ -62,6 +62,7 @@
             // 
             // dgStudents
             // 
+
             this.AllowUserToOrderColumns = true;
             this.AutoGenerateColumns = false;
             this.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
