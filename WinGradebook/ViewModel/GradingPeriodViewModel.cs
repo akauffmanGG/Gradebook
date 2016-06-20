@@ -10,10 +10,20 @@ namespace Gradebook.ViewModel
     public class GradingPeriodViewModel
     {
         public Guid Id { get; private set; }
-        public String Name { get; set; }
+        private String _name;
+        public String Name { 
+            get {
+                if(_name == null) {
+                    return "<current>";
+                }
+
+                return _name;
+            }
+            set { _name = value; }
+        } 
         public SortableBindingList<StudentViewModel> Students { get; set; }
         public SortableBindingList<CourseViewModel> Courses { get; set; }
-        public bool isCurrent { get; set; }
+        public bool isComplete { get; set; }
 
         public GradingPeriodViewModel()
         {
@@ -22,16 +32,11 @@ namespace Gradebook.ViewModel
             Courses = new SortableBindingList<CourseViewModel>();
         }
 
-        public GradingPeriodViewModel(bool _isCurrent) : this()
-        {
-            this.isCurrent = _isCurrent;
-        }
-
         public GradingPeriodViewModel(GradingPeriod gradingPeriod)
         {
             this.Id = gradingPeriod.Id;
             this.Name = gradingPeriod.Name;
-            this.isCurrent = gradingPeriod.isCurrent;
+            this.isComplete = gradingPeriod.isComplete;
             this.Students = new SortableBindingList<StudentViewModel>();
 
             if (gradingPeriod.Students != null)

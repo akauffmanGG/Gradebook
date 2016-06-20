@@ -12,7 +12,7 @@ namespace Gradebook.Model
         public String Name { get; set; }
         public List<Course> Courses { get; set; }
         public List<Student> Students { get; set; }
-        public bool isCurrent { get; set; }
+        public bool isComplete { get; set; }
 
         public GradingPeriod()
         {
@@ -23,7 +23,7 @@ namespace Gradebook.Model
         {
             this.Id = gradingPeriodVM.Id;
             this.Name = gradingPeriodVM.Name;
-            this.isCurrent = gradingPeriodVM.isCurrent;
+            this.isComplete = gradingPeriodVM.isComplete;
             this.Courses = new List<Course>();
             foreach (CourseViewModel courseVM in gradingPeriodVM.Courses)
             {
