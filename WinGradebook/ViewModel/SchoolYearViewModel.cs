@@ -12,7 +12,7 @@ namespace Gradebook.ViewModel
         public Guid Id { get; private set; }
         public String Name { get; set; }
         public List<GradingPeriodViewModel> GradingPeriods { get; set; }
-        public GradingPeriodViewModel CurrentGradingPeriod { get; private set; }
+        public GradingPeriodViewModel CurrentGradingPeriod { get; set; }
 
         public SchoolYearViewModel()
         {
@@ -32,7 +32,7 @@ namespace Gradebook.ViewModel
                     GradingPeriodViewModel gradingPeriodVM = new GradingPeriodViewModel(gradingPeriod);
                     this.GradingPeriods.Add(gradingPeriodVM);
 
-                    if (gradingPeriodVM.isCurrent)
+                    if (!gradingPeriodVM.isComplete)
                     {
                         this.CurrentGradingPeriod = gradingPeriodVM;
                     }
@@ -45,21 +45,21 @@ namespace Gradebook.ViewModel
          **/
         public void CreateGradingPeriod()
         {
-            GradingPeriodViewModel gradingPeriodVm = new GradingPeriodViewModel(true);
+            GradingPeriodViewModel gradingPeriodVm = new GradingPeriodViewModel();
             this.GradingPeriods.Add(gradingPeriodVm);
-            this.CurrentGradingPeriod.isCurrent = false;
+            this.CurrentGradingPeriod.isComplete = true;
             this.CurrentGradingPeriod = gradingPeriodVm;
         }
 
         public void CreateGradingPeriodFromCurrent()
         {
-            GradingPeriodViewModel gradingPeriodVm = new GradingPeriodViewModel(true);
+            GradingPeriodViewModel gradingPeriodVm = new GradingPeriodViewModel();
             this.GradingPeriods.Add(gradingPeriodVm);
 
             gradingPeriodVm.Students = cloneStudents(this.CurrentGradingPeriod.Students);
             gradingPeriodVm.Courses = cloneCourses(this.CurrentGradingPeriod.Courses);
 
-            this.CurrentGradingPeriod.isCurrent = false;
+            this.CurrentGradingPeriod.isComplete = true;
             this.CurrentGradingPeriod = gradingPeriodVm;
         }
 

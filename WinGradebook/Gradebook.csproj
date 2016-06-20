@@ -107,6 +107,12 @@
     <Compile Include="View\GradingPeriodPrompt.Designer.cs">
       <DependentUpon>GradingPeriodPrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\OpenPriorGradingPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OpenPriorGradingPeriod.Designer.cs">
+      <DependentUpon>OpenPriorGradingPeriod.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StudentGrid.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GradingPeriodPrompt.resx">
       <DependentUpon>GradingPeriodPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OpenPriorGradingPeriod.resx">
+      <DependentUpon>OpenPriorGradingPeriod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudentGrid.resx">
       <DependentUpon>StudentGrid.cs</DependentUpon>

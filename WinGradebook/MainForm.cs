@@ -82,17 +82,6 @@ namespace Gradebook
             dgStudents.ForeColor = creamColor;
         }
 
-        private void dgStudents_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            if (!e.Row.IsNewRow)
-            {
-                if ((MessageBox.Show("All grades for this student will be lost.",  "Are you sure you want to delete this student?", MessageBoxButtons.OKCancel) == DialogResult.Cancel))
-                {
-                    e.Cancel = true;
-                }
-            }
-        }
-
         private void dgCourses_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             if (!e.Row.IsNewRow)
@@ -115,13 +104,31 @@ namespace Gradebook
             }
             else if (dr == DialogResult.OK)
             {
-                gradebookVM.CurrentSchoolYear.CurrentGradingPeriod.Name = gradingPeriodPrompt.getName();
-                gradebookVM.CurrentSchoolYear.CreateGradingPeriodFromCurrent();
+                gradebookVM.SchoolYear.CurrentGradingPeriod.Name = gradingPeriodPrompt.getName();
+                gradebookVM.SchoolYear.CreateGradingPeriodFromCurrent();
                 gradingPeriodPrompt.Close();
 
                 reinitializeComponent();
             }
             
+        }
+
+        private void priorGradingPeriodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenPriorGradingPeriod openGradingPeriod = new OpenPriorGradingPeriod(gradebookVM.SchoolYear.GradingPeriods);
+            DialogResult dr = openGradingPeriod.ShowDialog(this);
+
+            if (dr == DialogResult.Cancel)
+            {
+                openGradingPeriod.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                gradebookVM.GradingPeriod = openGradingPeriod.getGradingPeriod();
+                openGradingPeriod.Close();
+
+                reinitializeComponent();
+            }
         }
 
     }

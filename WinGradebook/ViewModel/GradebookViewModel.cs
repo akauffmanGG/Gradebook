@@ -11,11 +11,12 @@ namespace Gradebook.ViewModel
 {
     class GradebookViewModel
     {
-        public SchoolYearViewModel CurrentSchoolYear { get; private set; }
+        public SchoolYearViewModel SchoolYear { get; private set; }
+        public GradingPeriodViewModel GradingPeriod { get; set; }
         public SortableBindingList<StudentViewModel> Students {
             get
             {
-                return CurrentSchoolYear.CurrentGradingPeriod.Students;
+                return GradingPeriod.Students;
             }
         }
 
@@ -23,7 +24,7 @@ namespace Gradebook.ViewModel
         {
             get
             {
-                return CurrentSchoolYear.CurrentGradingPeriod.Courses;
+                return GradingPeriod.Courses;
             }
         }
         
@@ -48,18 +49,19 @@ namespace Gradebook.ViewModel
                 _schoolYear = new SchoolYear();
             }
 
-            CurrentSchoolYear = new SchoolYearViewModel(_schoolYear);
-
-            GradingPeriodViewModel _currentGradingPeriod = CurrentSchoolYear.CurrentGradingPeriod;
-            if (CurrentSchoolYear.CurrentGradingPeriod == null)
+            SchoolYear = new SchoolYearViewModel(_schoolYear);
+            
+            if (SchoolYear.CurrentGradingPeriod == null)
             {
-                CurrentSchoolYear.CreateGradingPeriod();
+                SchoolYear.CreateGradingPeriod();
             }
+
+            GradingPeriod = SchoolYear.CurrentGradingPeriod;
         }
 
         public void Save()
         {
-            SchoolYear schoolYear = new SchoolYear(CurrentSchoolYear);
+            SchoolYear schoolYear = new SchoolYear(SchoolYear);
             SchoolYearDao.SaveSchoolYear(schoolYear);
         }
 

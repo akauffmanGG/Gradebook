@@ -30,7 +30,6 @@ namespace Gradebook
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             Gradebook.ViewModel.StudentViewModel studentViewModel1 = new Gradebook.ViewModel.StudentViewModel();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl = new System.Windows.Forms.TabControl();
@@ -66,10 +65,8 @@ namespace Gradebook
             this.optionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classPeriodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.priorGradingPeriodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tbStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).BeginInit();
@@ -78,7 +75,6 @@ namespace Gradebook
             ((System.ComponentModel.ISupportInitialize)(this.courseViewModelBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -198,6 +194,7 @@ namespace Gradebook
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
@@ -348,22 +345,22 @@ namespace Gradebook
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem1.Text = "&About...";
+
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // openToolStripMenuItem
             // 
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.priorGradingPeriodToolStripMenuItem1});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Text = "Open";
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // priorGradingPeriodToolStripMenuItem1
             // 
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            // 
-            // classPeriodDataGridViewTextBoxColumn
-            // 
-            this.classPeriodDataGridViewTextBoxColumn.Name = "classPeriodDataGridViewTextBoxColumn";
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(Gradebook.Model.Student);
+            this.priorGradingPeriodToolStripMenuItem1.Name = "priorGradingPeriodToolStripMenuItem1";
+            this.priorGradingPeriodToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.priorGradingPeriodToolStripMenuItem1.Text = "Grading Period";
+            this.priorGradingPeriodToolStripMenuItem1.Click += new System.EventHandler(this.priorGradingPeriodToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -385,7 +382,6 @@ namespace Gradebook
             this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,10 +390,6 @@ namespace Gradebook
         #endregion
 
         private StudentGrid dgStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classPeriodDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tbStudents;
         private System.Windows.Forms.TabPage tbAssignments;
@@ -430,6 +422,8 @@ namespace Gradebook
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gradingPeriodToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem schoolYearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem priorGradingPeriodToolStripMenuItem1;
 
     }
 }
