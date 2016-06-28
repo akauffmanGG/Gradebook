@@ -33,7 +33,7 @@ namespace Gradebook
             //applyTheme();
         }
 
-        private void initializeComponent()
+        private void setupComponent()
         {
             dgCourses.DataSource = gradebookVM.Courses;
             dgStudents.DataSource = gradebookVM.Students;
@@ -42,12 +42,12 @@ namespace Gradebook
             tbAssignments.Controls.Add(new AssignmentTabControl());
         }
 
-        private void reinitializeComponent()
+        private void resetupComponent()
         {
             tbGrades.Controls.Clear();
             tbAssignments.Controls.Clear();
 
-            initializeComponent();
+            setupComponent();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace Gradebook
                 gradebookVM.SchoolYear.CreateGradingPeriodFromCurrent();
                 gradingPeriodPrompt.Close();
 
-                reinitializeComponent();
+                resetupComponent();
             }
             
         }
@@ -127,8 +127,28 @@ namespace Gradebook
                 gradebookVM.GradingPeriod = openGradingPeriod.getGradingPeriod();
                 openGradingPeriod.Close();
 
-                reinitializeComponent();
+                resetupComponent();
             }
+        }
+
+        private void schoolYearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SchoolYearPrompt schoolYearPrompt = new SchoolYearPrompt();
+            DialogResult dr = schoolYearPrompt.ShowDialog(this);
+
+            if (dr == DialogResult.Cancel)
+            {
+                schoolYearPrompt.Close();
+            }
+            else if (dr == DialogResult.OK)
+            {
+                gradebookVM.SchoolYear.Name = schoolYearPrompt.getName();
+                gradebookVM.CreateSchoolYearFromCurrent();
+                schoolYearPrompt.Close();
+
+                resetupComponent();
+            }
+
         }
 
     }

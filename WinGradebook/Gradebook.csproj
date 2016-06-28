@@ -47,9 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\SortableBindingList.cs" />
-    <Compile Include="Data\CourseDao.cs" />
-    <Compile Include="Data\SchoolYearDao.cs" />
-    <Compile Include="Data\StudentDao.cs" />
+    <Compile Include="Data\GradebookDao.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +57,7 @@
     <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Model\Grade.cs" />
+    <Compile Include="Model\GradebookModel.cs" />
     <Compile Include="Model\GradingPeriod.cs" />
     <Compile Include="Model\SchoolYear.cs" />
     <Compile Include="Model\Student.cs" />
@@ -113,6 +112,12 @@
     <Compile Include="View\OpenPriorGradingPeriod.Designer.cs">
       <DependentUpon>OpenPriorGradingPeriod.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SchoolYearPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SchoolYearPrompt.Designer.cs">
+      <DependentUpon>SchoolYearPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\StudentGrid.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -156,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\OpenPriorGradingPeriod.resx">
       <DependentUpon>OpenPriorGradingPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SchoolYearPrompt.resx">
+      <DependentUpon>SchoolYearPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudentGrid.resx">
       <DependentUpon>StudentGrid.cs</DependentUpon>

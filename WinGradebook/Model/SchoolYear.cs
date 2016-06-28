@@ -11,6 +11,7 @@ namespace Gradebook.Model
         public Guid Id { get; set; }
         public String Name { get; set; }
         public List<GradingPeriod> GradingPeriods { get; set; }
+        public bool isComplete { get; set; }
 
         public SchoolYear()
         {
@@ -21,6 +22,7 @@ namespace Gradebook.Model
         {
             this.Id = schoolYearVM.Id;
             this.Name = schoolYearVM.Name;
+            this.isComplete = schoolYearVM.isComplete;
             this.GradingPeriods = new List<GradingPeriod>();
             foreach (GradingPeriodViewModel gradingPeriodVM in schoolYearVM.GradingPeriods)
             {

@@ -32,7 +32,6 @@ namespace Gradebook.View
 
         private void createAssignmentTabs()
         {
-
             foreach (CourseViewModel course in gradebookVM.Courses)
             {
                 addAssignmentTab(course);
