@@ -43,7 +43,13 @@ namespace Gradebook.View
 
         private void openBtn_Click(object sender, EventArgs e)
         {
+            if (gradingPeriodComboBox.SelectedIndex == 0)
+            {
+                ErrorProvider errorProvider = new ErrorProvider();
+                errorProvider.SetError(gradingPeriodComboBox, "You must select grading period.");
 
+                this.DialogResult = DialogResult.None;
+            }
         }
     }
 }
