@@ -13,6 +13,7 @@ namespace Gradebook.ViewModel
         public String Name { get; set; }
         public List<GradingPeriodViewModel> GradingPeriods { get; set; }
         public GradingPeriodViewModel CurrentGradingPeriod { get; set; }
+        public bool isComplete { get; set; }
 
         public SchoolYearViewModel()
         {
@@ -23,6 +24,7 @@ namespace Gradebook.ViewModel
         {
             this.Id = schoolYear.Id;
             this.Name = schoolYear.Name;
+            this.isComplete = schoolYear.isComplete;
             this.GradingPeriods = new List<GradingPeriodViewModel>();
 
             if (schoolYear.GradingPeriods != null)
@@ -47,7 +49,12 @@ namespace Gradebook.ViewModel
         {
             GradingPeriodViewModel gradingPeriodVm = new GradingPeriodViewModel();
             this.GradingPeriods.Add(gradingPeriodVm);
-            this.CurrentGradingPeriod.isComplete = true;
+
+            if (this.CurrentGradingPeriod != null)
+            {
+                this.CurrentGradingPeriod.isComplete = true;
+            }
+            
             this.CurrentGradingPeriod = gradingPeriodVm;
         }
 

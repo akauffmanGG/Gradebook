@@ -23,6 +23,7 @@ namespace Gradebook.View
             base.OnCreateControl();
 
             gradebookVm = GradebookViewModel.Instance;
+            this.AutoGenerateColumns = false;
             this.DataSource = gradebookVm.Students;
         }
 
