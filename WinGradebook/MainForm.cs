@@ -23,9 +23,13 @@ namespace Gradebook
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             gradebookVM = GradebookViewModel.Instance;
 
+            dgCourses.AutoGenerateColumns = false;
             dgCourses.DataSource = gradebookVM.Courses;
+
+            dgStudents.AutoGenerateColumns = false;
 
             tbGrades.Controls.Add(new GradeTabControl());
             tbAssignments.Controls.Add(new AssignmentTabControl());
@@ -51,6 +55,11 @@ namespace Gradebook
         }
 
         private void btnSave_Click(object sender, EventArgs e)
+        {
+            gradebookVM.Save();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gradebookVM.Save();
         }
@@ -150,6 +159,5 @@ namespace Gradebook
             }
 
         }
-
     }
 }
