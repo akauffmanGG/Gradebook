@@ -17,6 +17,7 @@ namespace Gradebook.ViewModel
 
         public SchoolYearViewModel()
         {
+            this.Id = Guid.NewGuid();
             GradingPeriods = new List<GradingPeriodViewModel>();
         }
 

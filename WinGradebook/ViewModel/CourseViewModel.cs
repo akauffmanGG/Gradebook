@@ -10,12 +10,13 @@ namespace Gradebook.ViewModel
 {
     public class CourseViewModel : ICloneable
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public String Name { get; set; }
         public SortableBindingList<AssignmentViewModel> Assignments { get; set; }
 
         public CourseViewModel()
         {
+            this.Id = Guid.NewGuid();
             Assignments = new SortableBindingList<AssignmentViewModel>();
         }
 

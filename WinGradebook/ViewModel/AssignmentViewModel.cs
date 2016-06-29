@@ -9,7 +9,7 @@ namespace Gradebook.ViewModel
 {
     public class AssignmentViewModel : INotifyPropertyChanged
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         private String _name;
         public String Name { 
@@ -49,7 +49,7 @@ namespace Gradebook.ViewModel
 
         public AssignmentViewModel()
         {
-            
+            this.Id = Guid.NewGuid();
             Grades = new Dictionary<Guid, GradeViewModel>();
         }
 
