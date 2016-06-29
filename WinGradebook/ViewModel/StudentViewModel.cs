@@ -8,7 +8,7 @@ namespace Gradebook.ViewModel
 {
     public class StudentViewModel : ICloneable
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string ClassPeriod { get; set; }
@@ -22,6 +22,7 @@ namespace Gradebook.ViewModel
 
         public StudentViewModel()
         {
+            this.Id = Guid.NewGuid();
         }
 
         public StudentViewModel(Student student){
