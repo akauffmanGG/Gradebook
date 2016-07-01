@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Gradebook.ViewModel.Service;
 
 namespace Gradebook.View
 {
@@ -25,6 +26,16 @@ namespace Gradebook.View
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void AssignmentGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            StateManager.MarkDirty();
+        }
+
+        private void AssignmentGrid_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            StateManager.MarkDirty();
         }
     }
 }

@@ -35,11 +35,11 @@ namespace Gradebook.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assignmentDateColumn = new CalendarColumn();
-            this.dueDateColumn = new CalendarColumn();
+            this.assignmentDateColumn = new Gradebook.View.Calendar.CalendarColumn();
+            this.dueDateColumn = new Gradebook.View.Calendar.CalendarColumn();
             this.pointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -54,8 +54,8 @@ namespace Gradebook.View
             // assignmentDateColumn
             // 
             this.assignmentDateColumn.DataPropertyName = "AssignmentDate";
-            dataGridViewCellStyle1.Format = "mm/dd/yy";
-            this.assignmentDateColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "mm/dd/yy";
+            this.assignmentDateColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.assignmentDateColumn.HeaderText = "Assignment Date";
             this.assignmentDateColumn.Name = "assignmentDateColumn";
             this.assignmentDateColumn.Width = 103;
@@ -63,8 +63,8 @@ namespace Gradebook.View
             // dueDateColumn
             // 
             this.dueDateColumn.DataPropertyName = "DueDate";
-            dataGridViewCellStyle2.Format = "mm/dd/yy";
-            this.dueDateColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "mm/dd/yy";
+            this.dueDateColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.dueDateColumn.HeaderText = "Due Date";
             this.dueDateColumn.Name = "dueDateColumn";
             this.dueDateColumn.Width = 72;
@@ -87,6 +87,8 @@ namespace Gradebook.View
             this.assignmentDateColumn,
             this.dueDateColumn,
             this.pointsColumn});
+            this.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssignmentGrid_CellEndEdit);
+            this.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.AssignmentGrid_UserDeletedRow);
             this.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.AssignmentGrid_UserDeletingRow);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);

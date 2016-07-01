@@ -70,6 +70,7 @@
     <Compile Include="ViewModel\GradeViewModel.cs" />
     <Compile Include="ViewModel\GradingPeriodViewModel.cs" />
     <Compile Include="ViewModel\SchoolYearViewModel.cs" />
+    <Compile Include="ViewModel\Service\StateManager.cs" />
     <Compile Include="ViewModel\StudentViewModel.cs" />
     <Compile Include="View\AssignmentGrid.cs">
       <SubType>Component</SubType>
@@ -87,6 +88,12 @@
     <Compile Include="View\Calendar\CalendarColumn.cs" />
     <Compile Include="View\Calendar\CalendarEditingControl.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CourseGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CourseGrid.Designer.cs">
+      <DependentUpon>CourseGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GradeGrid.cs">
       <SubType>Component</SubType>

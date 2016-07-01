@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Gradebook.ViewModel;
 using Gradebook.View.Theme;
+using Gradebook.ViewModel.Service;
 
 namespace Gradebook.View
 {
@@ -186,6 +187,11 @@ namespace Gradebook.View
         private void GradeGrid_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
             DataGridViewColumn col = e.Column;
+        }
+
+        private void GradeGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            StateManager.MarkDirty();
         }
 
     }

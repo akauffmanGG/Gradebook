@@ -31,11 +31,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classPeriodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +58,8 @@
             this.classPeriodDataGridViewTextBoxColumn.Name = "classPeriodDataGridViewTextBoxColumn";
             this.classPeriodDataGridViewTextBoxColumn.Width = 82;
             // 
-            // dgStudents
+            // StudentGrid
             // 
-
             this.AllowUserToOrderColumns = true;
             this.AutoGenerateColumns = false;
             this.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -75,11 +72,12 @@
             this.Location = new System.Drawing.Point(3, 3);
             this.Name = "dgStudents";
             this.Size = new System.Drawing.Size(670, 389);
-            this.TabIndex = 0;
+            this.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.StudentGrid_CellEndEdit);
+            this.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.StudentGrid_UserDeletedRow);
             this.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.StudentGrid_UserDeletingRow);
-
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
