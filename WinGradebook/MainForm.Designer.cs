@@ -36,8 +36,7 @@ namespace Gradebook
             this.tbStudents = new System.Windows.Forms.TabPage();
             this.dgStudents = new Gradebook.View.StudentGrid();
             this.tbCourses = new System.Windows.Forms.TabPage();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgCourses = new Gradebook.View.StyledGrid();
+            this.dgCourses = new Gradebook.View.CourseGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -67,7 +66,6 @@ namespace Gradebook
             this.tabControl.SuspendLayout();
             this.tbStudents.SuspendLayout();
             this.tbCourses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -126,24 +124,7 @@ namespace Gradebook
             this.tbCourses.TabIndex = 3;
             this.tbCourses.Text = "Courses";
             this.tbCourses.UseVisualStyleBackColor = true;
-            // 
-            // dgCourses
-            // 
-            this.dgCourses.AutoGenerateColumns = false;
-            this.dgCourses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn});
-            this.dgCourses.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgCourses.EnableHeadersVisualStyles = false;
-            this.dgCourses.Location = new System.Drawing.Point(3, 3);
-            this.dgCourses.Name = "dgCourses";
-            this.dgCourses.TabIndex = 0;
-            this.dgCourses.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgCourses_UserDeletingRow);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+
             // 
             // panel1
             // 
@@ -360,11 +341,11 @@ namespace Gradebook
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Gradebook";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl.ResumeLayout(false);
             this.tbStudents.ResumeLayout(false);
             this.tbCourses.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgCourses)).EndInit();
             this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -383,8 +364,7 @@ namespace Gradebook
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TabPage tbGrades;
         private System.Windows.Forms.TabPage tbCourses;
-        private Gradebook.View.StyledGrid dgCourses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private Gradebook.View.CourseGrid dgCourses;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;

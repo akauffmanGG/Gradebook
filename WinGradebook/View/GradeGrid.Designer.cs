@@ -73,6 +73,7 @@
             this.studentNameColumn,
             this.classPeriodColumn,
             this.totalGradeColumn});
+            this.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.GradeGrid_CellEndEdit);
             this.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GradeGrid_CellFormatting);
             this.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.GradeGrid_CellValidating);
             this.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.GradeGrid_SortCompare);

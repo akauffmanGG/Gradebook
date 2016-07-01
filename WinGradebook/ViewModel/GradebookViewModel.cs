@@ -6,6 +6,7 @@ using Gradebook.Model;
 using Gradebook.Data;
 using System.ComponentModel;
 using Gradebook.Core;
+using Gradebook.ViewModel.Service;
 
 namespace Gradebook.ViewModel
 {
@@ -76,6 +77,8 @@ namespace Gradebook.ViewModel
         {
             GradebookModel _gradebook = new GradebookModel(this);
             GradebookDao.SaveGradebook(_gradebook);
+
+            StateManager.Clean();
         }
 
         public void CreateSchoolYearFromCurrent()

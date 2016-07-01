@@ -10,6 +10,7 @@ using Gradebook.Model;
 using Gradebook.Data;
 using Gradebook.View;
 using Gradebook.ViewModel;
+using Gradebook.ViewModel.Service;
 
 namespace Gradebook
 {
@@ -158,6 +159,20 @@ namespace Gradebook
                 resetupComponent();
             }
 
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (StateManager.IsDirty)
+            {
+                DialogResult result = MessageBox.Show("You have unsaved changes which will be lost if you close the gradebook.", 
+                                "Unsaved Changes", 
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Warning,
+                                MessageBoxDefaultButton.Button2);
+
+                e.Cancel = (result == DialogResult.Cancel);
+            }
         }
     }
 }
