@@ -58,6 +58,8 @@ namespace Gradebook
             this.pasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totalGradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,7 +126,6 @@ namespace Gradebook
             this.tbCourses.TabIndex = 3;
             this.tbCourses.Text = "Courses";
             this.tbCourses.UseVisualStyleBackColor = true;
-
             // 
             // panel1
             // 
@@ -150,6 +151,7 @@ namespace Gradebook
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem1,
+            this.viewToolStripMenuItem,
             this.toolsToolStripMenuItem1,
             this.helpToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -176,7 +178,7 @@ namespace Gradebook
             this.gradingPeriodToolStripMenuItem,
             this.schoolYearToolStripMenuItem});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // gradingPeriodToolStripMenuItem
@@ -198,7 +200,7 @@ namespace Gradebook
             this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.priorGradingPeriodToolStripMenuItem1});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // priorGradingPeriodToolStripMenuItem1
@@ -214,19 +216,19 @@ namespace Gradebook
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // editToolStripMenuItem1
@@ -295,6 +297,21 @@ namespace Gradebook
             this.selectAllToolStripMenuItem1.Name = "selectAllToolStripMenuItem1";
             this.selectAllToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.selectAllToolStripMenuItem1.Text = "Select &All";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.totalGradesToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // totalGradesToolStripMenuItem
+            // 
+            this.totalGradesToolStripMenuItem.Name = "totalGradesToolStripMenuItem";
+            this.totalGradesToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.totalGradesToolStripMenuItem.Text = "Total Grades";
+            this.totalGradesToolStripMenuItem.Click += new System.EventHandler(this.totalGradesToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem1
             // 
@@ -389,6 +406,8 @@ namespace Gradebook
         private System.Windows.Forms.ToolStripMenuItem schoolYearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem priorGradingPeriodToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem totalGradesToolStripMenuItem;
 
     }
 }

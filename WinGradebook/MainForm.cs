@@ -11,6 +11,7 @@ using Gradebook.Data;
 using Gradebook.View;
 using Gradebook.ViewModel;
 using Gradebook.ViewModel.Service;
+using Gradebook.View.GradeTotals;
 
 namespace Gradebook
 {
@@ -173,6 +174,12 @@ namespace Gradebook
 
                 e.Cancel = (result == DialogResult.Cancel);
             }
+        }
+
+        private void totalGradesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GradeTotalsForm totalsForm = new GradeTotalsForm(gradebookVM.SchoolYear);
+            totalsForm.ShowDialog(this);
         }
     }
 }

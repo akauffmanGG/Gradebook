@@ -67,6 +67,7 @@
     <Compile Include="ViewModel\CourseViewModel.cs" />
     <Compile Include="ViewModel\GradebookViewModel.cs" />
     <Compile Include="ViewModel\GradeColorCode.cs" />
+    <Compile Include="ViewModel\GradeTotals\GradeTotalsViewModel.cs" />
     <Compile Include="ViewModel\GradeViewModel.cs" />
     <Compile Include="ViewModel\GradingPeriodViewModel.cs" />
     <Compile Include="ViewModel\SchoolYearViewModel.cs" />
@@ -106,6 +107,18 @@
     </Compile>
     <Compile Include="View\GradeTabControl.Designer.cs">
       <DependentUpon>GradeTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GradeTotals\GradeTotalsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GradeTotals\GradeTotalsForm.Designer.cs">
+      <DependentUpon>GradeTotalsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GradeTotals\GradeTotalsGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\GradeTotals\GradeTotalsGrid.Designer.cs">
+      <DependentUpon>GradeTotalsGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="View\GradingPeriodPrompt.cs">
       <SubType>Form</SubType>
@@ -162,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\GradeTabControl.resx">
       <DependentUpon>GradeTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GradeTotals\GradeTotalsForm.resx">
+      <DependentUpon>GradeTotalsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GradeTotals\GradeTotalsGrid.resx">
+      <DependentUpon>GradeTotalsGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GradingPeriodPrompt.resx">
       <DependentUpon>GradingPeriodPrompt.cs</DependentUpon>
