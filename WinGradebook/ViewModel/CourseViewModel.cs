@@ -58,14 +58,42 @@ namespace Gradebook.ViewModel
             }
         }
 
+        public int getTotalPoints()
+        {
+            int totalPoints = 0;
+
+            foreach (AssignmentViewModel assignment in Assignments)
+            {
+                totalPoints += assignment.Points;
+            }
+
+            return totalPoints;
+        }
+
+        public int getStudentPoints(StudentViewModel student)
+        {
+            int studentPoints = 0;
+
+            foreach (AssignmentViewModel assignment in Assignments)
+            {
+                if (assignment.Grades.ContainsKey(student.Id))
+                {
+                    studentPoints += assignment.Grades[student.Id].Points.GetValueOrDefault();
+                }
+            }
+
+            return studentPoints;
+        }
+
         /** 
          * Returns a shallow clone of this instance. The clone will have a new 
          * Id and no assignments.
          **/
         public object Clone()
         {
-            CourseViewModel clone = new CourseViewModel();
-            clone.Name = this.Name;
+
+            CourseViewModel clone = (CourseViewModel)this.MemberwiseClone();
+            clone.Assignments = new SortableBindingList<AssignmentViewModel>();
 
             return clone;
         }
