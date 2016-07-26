@@ -11,7 +11,7 @@ namespace Gradebook.Data
     class GradebookDao
     {
         //TODO: Make into a property string
-        private const String PATH = "C:\\Users\\Andy.Kauffman\\gradebook.xml";
+        private const String PATH = "gradebook.xml";
 
         public static GradebookModel getGradebook()
         {

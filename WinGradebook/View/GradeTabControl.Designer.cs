@@ -33,10 +33,12 @@
             // GradeTabControl
             // 
             this.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ItemSize = new System.Drawing.Size(200, 18);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
     }
 }

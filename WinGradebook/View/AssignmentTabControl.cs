@@ -14,6 +14,7 @@ namespace Gradebook.View
     {
         private GradebookViewModel gradebookVM;
         private BindingList<CourseViewModel> courses;
+        private TabPage gettingStartedTab;
 
         public AssignmentTabControl()
         {
@@ -36,6 +37,11 @@ namespace Gradebook.View
             {
                 addAssignmentTab(course);
             }
+
+            if (gradebookVM.Courses.Count == 0)
+            {
+                addGettingStartedTab();
+            }
         }
 
         private void addAssignmentTab(CourseViewModel course)
@@ -51,10 +57,28 @@ namespace Gradebook.View
             this.Controls.Add(tab);
         }
 
+        private void addGettingStartedTab()
+        {
+            gettingStartedTab = new TabPage("Getting Started");
+            Label noAssignmentsLabel = new Label();
+            noAssignmentsLabel.AutoSize = true;
+            noAssignmentsLabel.Location = new System.Drawing.Point(0, 10);
+            noAssignmentsLabel.Name = "noAssignmentsLabel";
+            noAssignmentsLabel.Size = new System.Drawing.Size(100, 23);
+            noAssignmentsLabel.TabIndex = 0;
+            noAssignmentsLabel.Text = "No assignments to display. Add courses to begin.";
+            gettingStartedTab.Controls.Add(noAssignmentsLabel);
+            noAssignmentsLabel.Visible = true;
+
+            this.Controls.Add(gettingStartedTab);
+        }
+
         void blCourses_ListChanged(object sender, ListChangedEventArgs e)
         {
             if (e.ListChangedType.Equals(ListChangedType.ItemAdded))
             {
+                this.Controls.Remove(gettingStartedTab);
+
                 CourseViewModel newCourse = courses[e.NewIndex];
                 newCourse.Name = "";
                 addAssignmentTab(newCourse);
